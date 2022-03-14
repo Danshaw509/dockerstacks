@@ -1,0 +1,23 @@
+---
+version: "2.1"
+networks:
+  default:
+      external:
+        name: Ze Home Network
+        
+services:
+  UnifiController:
+    image: lscr.io/linuxserver/unifi-controller
+    container_name: UnifiController
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MEM_LIMIT=1024 #optional
+      - MEM_STARTUP=1024 #optional
+    volumes:
+      - /volumes/unificontroller:/config
+    restart: unless-stopped
+    networks:
+      default:
+        ipv4_address: 192.168.1.50
+    
