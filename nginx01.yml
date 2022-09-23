@@ -1,0 +1,10 @@
+---
+version: "2"
+services:
+  nginx01:
+    image: nginx
+    container_name: nginx01
+    ports:
+     - 8888:80
+    volumes:
+     - /volumes/nginx01:/usr/share/nginx/html
