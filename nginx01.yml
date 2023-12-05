@@ -8,3 +8,6 @@ services:
      - 8888:80
     volumes:
      - /volumes/nginx01:/usr/share/nginx/html
+
+
+
